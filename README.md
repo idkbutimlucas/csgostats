@@ -13,3 +13,8 @@ yarn start
 ## Link for view. 🚀
 
 https://expo.dev/@idkbutimlucas/csgostats
+
+## Screen : 
+
+
+<img width="403" alt="Capture d’écran 2022-02-23 à 17 01 53" src="https://user-images.githubusercontent.com/76565606/155357740-b32d4349-6c60-46f0-ae68-7723dafdc782.png">
