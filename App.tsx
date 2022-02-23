@@ -1,25 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Card, Paragraph, Title } from "react-native-paper";
 
 import { default as data } from "./api/data.json";
+import { PlatformInfo } from "./types";
 
 const App = () => {
+  const Item = ({ item }: PlatformInfo) => {
+    return (
+      <Card>
+        <Card.Content>
+          <Title>{item.platformSlug}</Title>
+          <Paragraph>
+            {/* {item.platformUserHandle} */}
+            test
+          </Paragraph>
+        </Card.Content>
+        <Card.Cover source={{ uri: item.url }} />
+      </Card>
+    );
+  };
 
+  const renderItem = () => {
+    return <Text>Hey</Text>;
+  };
 
   return (
-    <View style={styles.container}>
-      <Text>{JSON.stringify(data)}</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.safeContainer}>
+      <Text>{JSON.stringify(data.segments[0].stats)}</Text>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'darkgrey',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "darkgrey",
+  },
+
+  safeContainer: {
+    flex: 1,
   },
 });
 
