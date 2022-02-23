@@ -33,6 +33,27 @@ const App = () => {
             <Paragraph>{data.platformInfo.platformUserId}</Paragraph>
             <Paragraph>{data.platformInfo.platformUserHandle}</Paragraph>
             <Paragraph>{data.platformInfo.platformUserIdentifier}</Paragraph>
+            <Title>Info</Title>
+            <Text>
+              Pourcentage de victoire :
+              {JSON.stringify(data.segments[0].stats.timePlayed.percentile)} %
+            </Text>
+            <Text>
+              Temps de jeux :
+              {JSON.stringify(data.segments[0].stats.timePlayed.displayValue)}
+            </Text>
+            <Text>
+              Nombre de Kill:
+              {JSON.stringify(data.segments[0].stats.kills.value)}
+            </Text>
+            <Text>
+              Nombre de deaths:
+              {JSON.stringify(data.segments[0].stats.deaths.value)}
+            </Text>
+            <Text>
+              KDA:
+              {JSON.stringify(data.segments[0].stats.kd.value)}
+            </Text>
           </Card.Content>
         </Card>
       </SafeAreaView>
